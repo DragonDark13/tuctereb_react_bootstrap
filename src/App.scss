@@ -1,4 +1,5 @@
 
+
 body {
   color: #fff;
 }
@@ -9,10 +10,6 @@ html {
     height: 100%;
   }
 }
-
-/**
- * @section Base Styles
- */
 
 body {
   font-family: Poppins, sans-serif;
@@ -389,6 +386,10 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
     height: 20px;
   }
 
+  i{
+    color: aqua;
+  }
+
 }
 
 .sticky-header {
@@ -411,4 +412,8 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
 
 .sb-section-opt-light .card-title {
   color: #191813;
+}
+
+.sb-section-opt-light .card-title {
+  color: green;
 }

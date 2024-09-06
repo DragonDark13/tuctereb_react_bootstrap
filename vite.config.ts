@@ -3,7 +3,9 @@ import react from '@vitejs/plugin-react'
 import path from 'path';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default ({
+    envPrefix: "REACT_ENV",
+
     base: '/tuctereb_react_bootstrap/',
     // This changes the out put dir from dist to build
     // comment this out if that isn't relevant for your project
@@ -21,12 +23,11 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
+                // Підключення Bootstrap SCSS
                 additionalData: `@import "../node_modules/bootstrap-scss/bootstrap";`,
-                // Загальні імпорти SCSS
-
-                quietDeps: true, // Вмикає приглушення попереджень про застарілі функції
-
-                includePaths: ["node_modules"], // Додає node_modules в шляхи для імпорту
+                // Вимкнення попереджень
+                quietDeps: true, // це працює у новіших версіях Vite/Sass
+                includePaths: ["node_modules"],
             },
         },
     },

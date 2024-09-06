@@ -34,8 +34,8 @@ const Header = ({setHeaderHeight}: IHeader) => {
                     <Container className={"d-flex flex-wrap"}>
                         <Navbar.Brand className={"navbar-logo text-white"} href="#home">TIC.TEREBOVLIA</Navbar.Brand>
                         <div>
-                            <Navbar.Toggle className={'border-0 p-0 rounded-0'} aria-controls="offcanvasNavbar">
-                                <i className="bi bi-list fs-1"></i>
+                            <Navbar.Toggle className={'border-0 p-0 rounded-0 shadow-none outline-0'} aria-controls="offcanvasNavbar">
+                                <i className="bi bi-list fs-1 text-white"></i>
                             </Navbar.Toggle>
                             <Navbar.Offcanvas
                                 id={`offcanvasNavbar`}

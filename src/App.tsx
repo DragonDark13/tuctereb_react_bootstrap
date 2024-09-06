@@ -1,5 +1,5 @@
 import Header from "./components/Header/Header";
-import './App.scss';
+
 import PageSectionWrapper from "./components/PageSectionWrapper/PageSectionWrapper";
 import {Button, Col, Row} from "react-bootstrap";
 import castle1 from './assets/img/castle1.png'

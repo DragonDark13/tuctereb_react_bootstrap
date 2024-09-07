@@ -461,9 +461,6 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
     height: 20px;
   }
 
-  i {
-    color: aqua;
-  }
 
 }
 
@@ -490,7 +487,8 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
 }
 
 
-.offcanvas {
+.offcanvas.offcanvas-end  {
+  width: 100%;
   background-color: #948a8a;
 
   .btn-close {

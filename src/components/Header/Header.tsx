@@ -4,9 +4,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import '../../App.scss';
 import {useEffect, useRef} from "react";
 import Sticky from 'react-sticky-el';
-import {Link} from 'react-scroll';  // Import Link from react-scroll
+import {Link,Button} from 'react-scroll';  // Import Link from react-scroll
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import {Button} from "react-bootstrap";
 
 
 interface IHeader {
@@ -32,7 +31,7 @@ const Header = ({setHeaderHeight}: IHeader) => {
                     hideOnBoundaryHit={false}>
                 <Navbar expand="lg"
                         className={`header_navbar`}>
-                    <Container className={"d-flex flex-wrap"}>
+                    <Container fluid={"lg"} className={"d-flex flex-wrap"}>
 
                         <Navbar.Brand className={"navbar-logo text-white"} href="#home">TIC.TEREBOVLIA</Navbar.Brand>
                             <Navbar.Toggle className={'border-0 p-0 rounded-0 shadow-none outline-0 text-white'} aria-controls="offcanvasNavbar">
@@ -48,15 +47,16 @@ const Header = ({setHeaderHeight}: IHeader) => {
                                     </Offcanvas.Title>
                                 </Offcanvas.Header>
                                 <Offcanvas.Body className={"ps-4 pe-4 pe-lg-0 ps-lg-0"}>
-                                    <Nav className="justify-content-end flex-grow-1 me-auto header_nav_menu align-items-center">
+                                    <Nav className="justify-content-end flex-grow-1 me-auto header_nav_menu align-items-lg-center">
                                         <Nav.Link as={Link} to="about" smooth={true} duration={500}>ПРО НАС
                                             <span className={"hover_bl"}></span>
                                         </Nav.Link>
                                         <Nav.Link as={Link} to="services" smooth={true} duration={500}>ПОСЛУГИ
                                             <span className={"hover_bl"}></span>
                                         </Nav.Link>
-                                        <Button variant={"outline-secondary"} as={Link} to="contacts" smooth={true} duration={500}
-                                                className={" btn border-2 rounded-0 btn-lg"}
+                                        <Button   to="contacts" smooth={true} duration={500}
+                                                className={" btn border-2 rounded-0 btn-lg btn-outline-secondary" +
+                                                " text-white"}
                                                 >КОНТАКТИ</Button>
                                     </Nav>
                                 </Offcanvas.Body>

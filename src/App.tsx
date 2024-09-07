@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header";
 
 import PageSectionWrapper from "./components/PageSectionWrapper/PageSectionWrapper";
-import {Button, Col, Row} from "react-bootstrap";
+import {Button, Col, Container, Row} from "react-bootstrap";
 import castle1 from './assets/img/castle1.png'
 import city from './assets/img/city.jpeg'
 import MyCardComponent from "./components/MyCardComponent/MyCardComponent";
@@ -55,29 +55,28 @@ function App() {
             <Header setHeaderHeight={setHeaderHeight}/>
             <section style={{paddingTop: headerHeight}} className="bg_section sb-section-opt-dark">
                 <div className="image_block"></div>
-                <div className="container sb-container align-items-start justify-content-center flex-column">
-                    <div
-                        className="row pt-5 align-items-center text-center sb-row-opt-padding-bottom-large sb-row-opt-padding-top-large">
-                        <div className="col-12">
-                            <div className="row justify-content-center">
-                                <div className="col-10">
-                                    <h1 className="bg_section_main_title">TEREBOVLIA TOURIST INFORMATION CENTER</h1>
-                                    <h4 className="bg_section_small_title">
-                                        ТЕРЕБОВЛЯНСЬКИЙ ТУРИСТИЧНО ІНФОРМАЦІЙНИЙ ЦЕНТР
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <Container className={"sb-container align-items-start justify-content-center flex-column"}>
+                    <Row
+                        className={"pt-5 align-items-center text-center sb-row-opt-padding-bottom-large sb-row-opt-padding-top-large justify-content-center"}>
+                        <Col xs={12} md={8} lg={7}>
+                            <h1 className="bg_section_main_title fs-1">TEREBOVLIA TOURIST INFORMATION
+                                CENTER</h1>
+                            <h4 className="bg_section_small_title fs-4">
+                                ТЕРЕБОВЛЯНСЬКИЙ ТУРИСТИЧНО ІНФОРМАЦІЙНИЙ ЦЕНТР
+                            </h4>
+                        </Col>
+
+                    </Row>
+
+                </Container>
             </section>
 
             <PageSectionWrapper id={"about"}>
-                <Row className={"align-items-center gx-5"}>
-                    <Col lg={7}>
+                <Row className={"align-items-center gx-md-5"}>
+                    <Col xs={12} md={7} className={"pb-3 pb-lg-0"}>
                         <h5 className="sb-text-image__content-title">ПРО НАС
                         </h5>
-                        <div className="text_container fs-5">
+                        <div className="text_container fs-6">
                             <p></p>
                             <p>Туристично-інформаційний центр&nbsp;створювався&nbsp;з думкою&nbsp;про гостей&nbsp;нашого
                                 міста&nbsp;для
@@ -98,7 +97,7 @@ function App() {
                         <Button variant="outline-secondary" size={"lg"} className={"border-2 rounded-0"}>Наші
                             контакти</Button>
                     </Col>
-                    <Col lg={5}>
+                    <Col xs={12} md={5}>
                         <img src={castle1} alt=""/>
                     </Col>
                 </Row>
@@ -110,9 +109,9 @@ function App() {
                         <p className="fs-2">Індивідуальний досвід для кожного мандрівника</p>
                     </Col>
                 </Row>
-                <Row className={"our_services_list"}>
+                <Row className={"our_services_list card_list"}>
                     {ourServicesArray.map(({title, text, imageSrc}, index) => (
-                        <Col key={index + title} md={4}>
+                        <Col className={"card_container"} key={index + title} xs={12} md={4}>
                             <MyCardComponent text={text} title={title} imageSrc={imageSrc}/>
                         </Col>
                     ))}

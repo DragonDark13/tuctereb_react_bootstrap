@@ -18,7 +18,7 @@ const MyCardComponent = ({
         <Card className={typeView==1 ? "rounded-0 border-0 shadow our_services_card" : "rounded-0 border-0"}>
             <Card.Img className={"rounded-0"} variant="top" src={imageSrc}/>
             <Card.Body className={typeView==2 ? "ps-0 pe-0" : ""}>
-                <Card.Title>{title}</Card.Title>
+                <Card.Title className={"fs-4"}>{title}</Card.Title>
                 <Card.Text>
                     {text}
                 </Card.Text>

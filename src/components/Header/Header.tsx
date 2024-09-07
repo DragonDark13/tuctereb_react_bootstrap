@@ -6,6 +6,7 @@ import {useEffect, useRef} from "react";
 import Sticky from 'react-sticky-el';
 import {Link} from 'react-scroll';  // Import Link from react-scroll
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import {Button} from "react-bootstrap";
 
 
 interface IHeader {
@@ -30,11 +31,11 @@ const Header = ({setHeaderHeight}: IHeader) => {
                     boundaryElement=".block"
                     hideOnBoundaryHit={false}>
                 <Navbar expand="lg"
-                        className={`pt-3 pb-3 header_navbar `}>
+                        className={`header_navbar`}>
                     <Container className={"d-flex flex-wrap"}>
+
                         <Navbar.Brand className={"navbar-logo text-white"} href="#home">TIC.TEREBOVLIA</Navbar.Brand>
-                        <div>
-                            <Navbar.Toggle className={'border-0 p-0 rounded-0 shadow-none outline-0'} aria-controls="offcanvasNavbar">
+                            <Navbar.Toggle className={'border-0 p-0 rounded-0 shadow-none outline-0 text-white'} aria-controls="offcanvasNavbar">
                                 <i className="bi bi-list fs-1 text-white"></i>
                             </Navbar.Toggle>
                             <Navbar.Offcanvas
@@ -42,22 +43,21 @@ const Header = ({setHeaderHeight}: IHeader) => {
                                 aria-labelledby={`offcanvasNavbar`}
                                 placement="end"
                             >
-                                <Offcanvas.Header closeButton>
+                                <Offcanvas.Header closeButton closeVariant={'white'}>
                                     <Offcanvas.Title id={`offcanvasNavbar`}>
-                                        Offcanvas
                                     </Offcanvas.Title>
                                 </Offcanvas.Header>
-                                <Offcanvas.Body>
-                                    <Nav className="justify-content-end flex-grow-1 pe-3 me-auto header_nav_menu">
+                                <Offcanvas.Body className={"ps-4 pe-4 pe-lg-0 ps-lg-0"}>
+                                    <Nav className="justify-content-end flex-grow-1 me-auto header_nav_menu align-items-center">
                                         <Nav.Link as={Link} to="about" smooth={true} duration={500}>ПРО НАС
                                             <span className={"hover_bl"}></span>
                                         </Nav.Link>
                                         <Nav.Link as={Link} to="services" smooth={true} duration={500}>ПОСЛУГИ
                                             <span className={"hover_bl"}></span>
                                         </Nav.Link>
-                                        <Nav.Link as={Link} to="contacts" smooth={true} duration={500}
-                                                className={" btn btn-outline-secondary border-2 rounded-0"}
-                                                >КОНТАКТИ</Nav.Link>
+                                        <Button variant={"outline-secondary"} as={Link} to="contacts" smooth={true} duration={500}
+                                                className={" btn border-2 rounded-0 btn-lg"}
+                                                >КОНТАКТИ</Button>
                                     </Nav>
                                 </Offcanvas.Body>
                             </Navbar.Offcanvas>
@@ -74,7 +74,6 @@ const Header = ({setHeaderHeight}: IHeader) => {
                             {/*                variant={"outline-secondary"}>КОНТАКТИ</Button>*/}
                             {/*    </Nav>*/}
                             {/*</Navbar.Collapse>*/}
-                        </div>
                     </Container>
                 </Navbar>
             </Sticky>

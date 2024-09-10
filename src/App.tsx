@@ -9,7 +9,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import Footer from "./components/Footer/Footer";
 import {useState} from "react";
 import React from 'react'
-import {AdvancedMarker, APIProvider, Map, Pin} from '@vis.gl/react-google-maps';
+import MapEmbed from "./components/MapEmbed";
 
 
 const ourServicesArray = [
@@ -44,32 +44,10 @@ const ourProdutsArray = [
     }
 ]
 
-type Poi = { key: string, location: google.maps.LatLngLiteral }
-const locations: Poi[] = [
-    {key: 'operaHouse', location: {lat: 49.29973518306548, lng: 25.688869663040457}},
-];
-
-const PoiMarkers = (props: { pois: Poi[] }) => {
-    return (
-        <>
-            {props.pois.map((poi: Poi) => (
-                <AdvancedMarker
-                    key={poi.key}
-                    position={poi.location}>
-                    <Pin background={'#FBBC04'} glyphColor={'#000'} borderColor={'#000'}/>
-                </AdvancedMarker>
-            ))}
-        </>
-    );
-};
-
-
 function App() {
     const [headerHeight, setHeaderHeight] = useState(0); // State to store the height
 
     console.log('API Key:', import.meta.env.REACT_ENV_GOOGLE_MAPS_API_KEY);
-    const googleMapsApiKey = import.meta.env.REACT_ENV_GOOGLE_MAPS_API_KEY;
-    const mapId = import.meta.env.REACT_ENV_GOOGLE_MAP_ID;
 
 
     return (
@@ -179,7 +157,7 @@ function App() {
 
             </PageSectionWrapper>
             <PageSectionWrapper id={"contacts"}>
-                <Row>
+                <Row className={"gx-md-5"}>
                     <Col xs={12} md={6}>
 
                         <div className="contact-full__location">
@@ -271,18 +249,7 @@ function App() {
 
                     </Col>
                     <Col>
-                        <APIProvider apiKey={googleMapsApiKey || ''}>
-                            <Map
-                                mapId={mapId}
-                                style={{width: '100%', height: '100%'}}
-                                defaultCenter={{lat: 49.2996228, lng: 25.6888259}} // Центральна точка з вашого iFrame
-                                defaultZoom={18} // Приблизний масштаб
-                                gestureHandling={'greedy'}
-                                disableDefaultUI={true}
-                            >
-                                <PoiMarkers pois={locations}/>
-                            </Map>
-                        </APIProvider>
+                        <MapEmbed latitude={49.2996228} longitude={25.6888259}/>
                     </Col>
                 </Row>
 

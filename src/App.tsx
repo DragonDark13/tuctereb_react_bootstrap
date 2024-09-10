@@ -9,6 +9,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import Footer from "./components/Footer/Footer";
 import {useState} from "react";
 import React from 'react'
+import {AdvancedMarker, APIProvider, Map, Pin} from '@vis.gl/react-google-maps';
 
 
 const ourServicesArray = [
@@ -43,12 +44,33 @@ const ourProdutsArray = [
     }
 ]
 
+type Poi = { key: string, location: google.maps.LatLngLiteral }
+const locations: Poi[] = [
+    {key: 'operaHouse', location: {lat: 49.29973518306548, lng: 25.688869663040457}},
+];
+
+const PoiMarkers = (props: { pois: Poi[] }) => {
+    return (
+        <>
+            {props.pois.map((poi: Poi) => (
+                <AdvancedMarker
+                    key={poi.key}
+                    position={poi.location}>
+                    <Pin background={'#FBBC04'} glyphColor={'#000'} borderColor={'#000'}/>
+                </AdvancedMarker>
+            ))}
+        </>
+    );
+};
+
 
 function App() {
     const [headerHeight, setHeaderHeight] = useState(0); // State to store the height
 
+    console.log('API Key:', import.meta.env.REACT_ENV_GOOGLE_MAPS_API_KEY);
+    const googleMapsApiKey = import.meta.env.REACT_ENV_GOOGLE_MAPS_API_KEY;
+    const mapId = import.meta.env.REACT_ENV_GOOGLE_MAP_ID;
 
-    console.log(headerHeight);
 
     return (
         <React.Fragment>
@@ -157,96 +179,113 @@ function App() {
 
             </PageSectionWrapper>
             <PageSectionWrapper id={"contacts"}>
-                <Col md={6}>
+                <Row>
+                    <Col xs={12} md={6}>
 
-                    <div className="contact-full__location">
-                        <div>
+                        <div className="contact-full__location">
+                            <div>
 
-                            <div className="contact-details__row contact-details__contact">
-                                <h6 className="contact-details__title fw-bold">Запитайте у нас</h6>
-                                <div className="contact-details__phone">
+                                <div className="contact-details__row contact-details__contact">
+                                    <h6 className="contact-details__title fw-bold">Запитайте у нас</h6>
+                                    <div className="contact-details__phone">
 
-                                    <a href="tel:+380688180278" className="d-flex align-items-center">
-                                        <i className="bi bi-telephone"></i>
-                                        <span>+380 68 818 0278</span>
-                                    </a>
-                                </div>
-                                <div className="contact-details__email">
-                                    <a href="mailto:tic.terebovlia@gmail.com"
-                                       className="d-flex align-items-center">
-                                        <i className="bi bi-envelope"></i>
-
-                                        <span>tic.terebovlia@gmail.com</span>
-                                    </a>
-                                </div>
-                                <ul className="social-icons list-inline">
-                                    <li className="list-inline-item">
-                                        <a href="https://www.facebook.com/terebovlia.tic"
-                                           target="_blank" rel="noreferrer">
-                                            <i className="bi bi-facebook"></i>
+                                        <a href="tel:+380688180278" className="d-flex align-items-center">
+                                            <i className="bi bi-telephone"></i>
+                                            <span>+380 68 818 0278</span>
                                         </a>
-                                    </li>
-                                    <li className="list-inline-item">
-                                        <a href="https://www.instagram.com/tourcenter.terebovlia"
-                                           target="_blank" rel="noreferrer">
-                                            <i className="bi bi-instagram"></i>
+                                    </div>
+                                    <div className="contact-details__email">
+                                        <a href="mailto:tic.terebovlia@gmail.com"
+                                           className="d-flex align-items-center">
+                                            <i className="bi bi-envelope"></i>
+
+                                            <span>tic.terebovlia@gmail.com</span>
                                         </a>
-                                    </li>
-                                </ul>
+                                    </div>
+                                    <ul className="social-icons list-inline">
+                                        <li className="list-inline-item">
+                                            <a href="https://www.facebook.com/terebovlia.tic"
+                                               target="_blank" rel="noreferrer">
+                                                <i className="bi bi-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li className="list-inline-item">
+                                            <a href="https://www.instagram.com/tourcenter.terebovlia"
+                                               target="_blank" rel="noreferrer">
+                                                <i className="bi bi-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className="contact-details__row contact-details__location">
+                                    <h6 className="fw-bold">Location</h6>
+                                    <p className="adr contact-details__address">
+                                        <a href="https://www.google.com/maps/place/вул.+Шевченка,+8,+Теребовля"
+                                           target="_blank" rel="noreferrer"
+                                           className="d-flex align-items-center">
+                                            <i className="bi bi-geo-alt-fill"></i>
+
+                                            <span> вул. Шевченка, 8, Теребовля</span>
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <div className="contact-details__row contact-details__hours sb-hours-wrapper">
+                                    <h6 className="contact-details__title fw-bold">Hours</h6>
+                                    <ol aria-label="Working hours" className="hours-list list-unstyled">
+                                        <li className="hours-list__item d-flex">
+                                            <span className="hours-list__day">Monday</span>
+                                            <span className="ms-auto">9:00am – 5:00pm</span>
+                                        </li>
+                                        <li className="hours-list__item d-flex">
+                                            <span className="hours-list__day">Tuesday</span>
+                                            <span className="ms-auto">9:00am – 5:00pm</span>
+                                        </li>
+                                        <li className="hours-list__item d-flex">
+                                            <span className="hours-list__day">Wednesday</span>
+                                            <span className="ms-auto">9:00am – 5:00pm</span>
+                                        </li>
+                                        <li className="hours-list__item d-flex">
+                                            <span className="hours-list__day">Thursday</span>
+                                            <span className="ms-auto">9:00am – 5:00pm</span>
+                                        </li>
+                                        <li className="hours-list__item d-flex">
+                                            <span className="hours-list__day">Friday</span>
+                                            <span className="ms-auto">9:00am – 5:00pm</span>
+                                        </li>
+                                        <li className="hours-list__item d-flex">
+                                            <span className="hours-list__day">Saturday</span>
+                                            <span className="ms-auto">10:00am – 4:00pm</span>
+                                        </li>
+                                        <li className="hours-list__item d-flex">
+                                            <span className="hours-list__day">Sunday</span>
+                                            <span className="ms-auto">Closed</span>
+                                        </li>
+                                    </ol>
+                                </div>
+
                             </div>
-
-                            <div className="contact-details__row contact-details__location">
-                                <h6 className="fw-bold">Location</h6>
-                                <p className="adr contact-details__address">
-                                    <a href="https://www.google.com/maps/place/вул.+Шевченка,+8,+Теребовля"
-                                       target="_blank" rel="noreferrer"
-                                       className="d-flex align-items-center">
-                                        <i className="bi bi-geo-alt-fill"></i>
-
-                                        <span> вул. Шевченка, 8, Теребовля</span>
-                                    </a>
-                                </p>
-                            </div>
-
-                            <div className="contact-details__row contact-details__hours sb-hours-wrapper">
-                                <h6 className="contact-details__title fw-bold">Hours</h6>
-                                <ol aria-label="Working hours" className="hours-list list-unstyled">
-                                    <li className="hours-list__item d-flex">
-                                        <span className="hours-list__day">Monday</span>
-                                        <span className="ms-auto">9:00am – 5:00pm</span>
-                                    </li>
-                                    <li className="hours-list__item d-flex">
-                                        <span className="hours-list__day">Tuesday</span>
-                                        <span className="ms-auto">9:00am – 5:00pm</span>
-                                    </li>
-                                    <li className="hours-list__item d-flex">
-                                        <span className="hours-list__day">Wednesday</span>
-                                        <span className="ms-auto">9:00am – 5:00pm</span>
-                                    </li>
-                                    <li className="hours-list__item d-flex">
-                                        <span className="hours-list__day">Thursday</span>
-                                        <span className="ms-auto">9:00am – 5:00pm</span>
-                                    </li>
-                                    <li className="hours-list__item d-flex">
-                                        <span className="hours-list__day">Friday</span>
-                                        <span className="ms-auto">9:00am – 5:00pm</span>
-                                    </li>
-                                    <li className="hours-list__item d-flex">
-                                        <span className="hours-list__day">Saturday</span>
-                                        <span className="ms-auto">10:00am – 4:00pm</span>
-                                    </li>
-                                    <li className="hours-list__item d-flex">
-                                        <span className="hours-list__day">Sunday</span>
-                                        <span className="ms-auto">Closed</span>
-                                    </li>
-                                </ol>
-                            </div>
-
                         </div>
-                    </div>
 
 
-                </Col>
+                    </Col>
+                    <Col>
+                        <APIProvider apiKey={googleMapsApiKey || ''}>
+                            <Map
+                                mapId={mapId}
+                                style={{width: '100%', height: '100%'}}
+                                defaultCenter={{lat: 49.2996228, lng: 25.6888259}} // Центральна точка з вашого iFrame
+                                defaultZoom={18} // Приблизний масштаб
+                                gestureHandling={'greedy'}
+                                disableDefaultUI={true}
+                            >
+                                <PoiMarkers pois={locations}/>
+                            </Map>
+                        </APIProvider>
+                    </Col>
+                </Row>
+
             </PageSectionWrapper>
             <Footer/>
         </React.Fragment>

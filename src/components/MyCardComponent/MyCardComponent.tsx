@@ -15,7 +15,8 @@ const MyCardComponent = ({
                              typeView = 1
                          }: IMyCardComponent) => {
     return (
-        <Card className={typeView==1 ? "rounded-0 border-0 shadow our_services_card" : "rounded-0 border-0"}>
+        <Card className={typeView==1 ? "rounded-0 border-0 shadow our_services_card" : "rounded-0 border-0" +
+            " our_product_card"}>
             <Card.Img className={"rounded-0"} variant="top" src={imageSrc}/>
             <Card.Body className={typeView==2 ? "ps-0 pe-0" : ""}>
                 <Card.Title className={"fs-4"}>{title}</Card.Title>

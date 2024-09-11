@@ -1,8 +1,7 @@
 import Header from "./components/Header/Header";
 
 import PageSectionWrapper from "./components/PageSectionWrapper/PageSectionWrapper";
-import {Button, Col, Container, Row} from "react-bootstrap";
-import castle1 from './assets/img/castle1.png'
+import {Col, Container, Row} from "react-bootstrap";
 import city from './assets/img/city.jpeg'
 import MyCardComponent from "./components/MyCardComponent/MyCardComponent";
 import 'bootstrap-icons/font/bootstrap-icons.css';

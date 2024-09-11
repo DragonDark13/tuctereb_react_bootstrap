@@ -1,4 +1,3 @@
-import React from 'react';
 import PageSectionWrapper from "../PageSectionWrapper/PageSectionWrapper";
 import historyImg from '../../assets/img/history.png'
 

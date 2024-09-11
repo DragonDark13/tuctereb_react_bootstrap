@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import {useState} from "react";
 import React from 'react'
 import MapEmbed from "./components/MapEmbed";
+import UncontrolledExample from "./components/Slider/UncontrolledExample";
 
 
 const ourServicesArray = [
@@ -150,7 +151,7 @@ function App() {
 
                     </Col>
                     <Col xs={12} md={"6"}>
-                        <img src={city} alt=""/>
+                        <UncontrolledExample/>
                     </Col>
 
                 </Row>

@@ -20,7 +20,7 @@ function UncontrolledExample() {
     return (
         <Carousel>
 
-            {sliderArray.map(({imgSrc, index}) => (
+            {sliderArray.map(({imgSrc},index) => (
                 <Carousel.Item key={index}>
                     <img src={imgSrc} alt=""/>
                 </Carousel.Item>

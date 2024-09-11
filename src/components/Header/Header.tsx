@@ -34,7 +34,7 @@ const Header = ({setHeaderHeight}: IHeader) => {
         <div className="stickyHeaderContainer" ref={headerRef}>
             <Sticky stickyClassName={'header_sticky_state'} boundaryElement=".block" hideOnBoundaryHit={false}>
                 <Navbar expand="lg" className={`header_navbar`}>
-                    <Container fluid={"lg"} className={"d-flex flex-wrap"}>
+                    <Container fluid={"xl"} className={"d-flex flex-wrap"}>
                         <Navbar.Brand className={"navbar-logo text-white"} href="#home">TIC.TEREBOVLIA</Navbar.Brand>
                         <Navbar.Toggle
                             className={'border-0 p-0 rounded-0 shadow-none outline-0 text-white'}

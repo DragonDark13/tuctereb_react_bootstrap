@@ -11,7 +11,7 @@ const PageSectionWrapper = ({children, id, variant="light"}: IPageSectionWrapper
     return (
         <section id={id ? id : ""}
                  className={"sb-section option-title-show-decoration-square "+ (variant==='light' ? "sb-section-opt-light " : "sb-section-opt-dark")}>
-            <Container fluid={"lg"}>
+            <Container fluid={"xl"}>
                 <Row className={"sb-row-opt-padding-bottom-large sb-row-opt-padding-top-large align-items-center"}>
                     <Col>
                          {children}

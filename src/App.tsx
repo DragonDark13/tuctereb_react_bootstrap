@@ -11,6 +11,7 @@ import {useState} from "react";
 import React from 'react'
 import MapEmbed from "./components/MapEmbed";
 import UncontrolledExample from "./components/Slider/UncontrolledExample";
+import AboutBlock from "./components/AboutBlock/AboutBlock";
 
 
 const ourServicesArray = [
@@ -71,38 +72,39 @@ function App() {
 
                 </Container>
             </section>
+            <AboutBlock/>
 
-            <PageSectionWrapper id={"about"}>
-                <Row className={"align-items-center gx-md-5"}>
-                    <Col xs={12} md={7} className={"pb-3 pb-lg-0"}>
-                        <h5 className="sb-text-image__content-title">ПРО НАС
-                        </h5>
-                        <div className="text_container fs-6">
-                            <p></p>
-                            <p>Туристично-інформаційний центр&nbsp;створювався&nbsp;з думкою&nbsp;про гостей&nbsp;нашого
-                                міста&nbsp;для
-                                того, щоб&nbsp;зробити їх перебування в&nbsp;громаді&nbsp;максимально комфортним
-                                і&nbsp;цікавим.</p>
-                            <p>Ми&nbsp;з радістю надамо&nbsp;вам необхідну інформацію&nbsp;про&nbsp;визначні
-                                пам’ятки,&nbsp;інфраструктуру,&nbsp;культурні
-                                та розважальні&nbsp;заклади,&nbsp;готельно-рекреаційну&nbsp;базу&nbsp;нашого
-                                міста,&nbsp;заходи
-                                та&nbsp;фестивалі, а&nbsp;також про багато іншого.</p>
-                            <p>Туристично-інформаційний центр є міським комунальним підприємством і надає
-                                послуги&nbsp;екскурсійного
-                                обслуговування&nbsp;у супроводі гідів-екскурсоводів.</p>
-                            <p>Основним завданням нашого центру є інформаційна підтримка та проведення екскурсій, тому
-                                для нас
-                                дуже важливо, щоб у Вас залишилися найкращі враження про нашу гостинну громаду.</p>
-                        </div>
-                        <Button variant="outline-secondary" size={"lg"} className={"border-2 rounded-0"}>Наші
-                            контакти</Button>
-                    </Col>
-                    <Col xs={12} md={5}>
-                        <img src={castle1} alt=""/>
-                    </Col>
-                </Row>
-            </PageSectionWrapper>
+            {/*<PageSectionWrapper id={"about"}>*/}
+            {/*PageSectionWrapper    <Row className={"align-items-center gx-md-5"}>*/}
+            {/*        <Col xs={12} md={7} className={"pb-3 pb-lg-0"}>*/}
+            {/*            <h5 className="sb-text-image__content-title">ПРО НАС*/}
+            {/*            </h5>*/}
+            {/*            <div className="text_container fs-6">*/}
+            {/*                <p></p>*/}
+            {/*                <p>Туристично-інформаційний центр&nbsp;створювався&nbsp;з думкою&nbsp;про гостей&nbsp;нашого*/}
+            {/*                    міста&nbsp;для*/}
+            {/*                    того, щоб&nbsp;зробити їх перебування в&nbsp;громаді&nbsp;максимально комфортним*/}
+            {/*                    і&nbsp;цікавим.</p>*/}
+            {/*                <p>Ми&nbsp;з радістю надамо&nbsp;вам необхідну інформацію&nbsp;про&nbsp;визначні*/}
+            {/*                    пам’ятки,&nbsp;інфраструктуру,&nbsp;культурні*/}
+            {/*                    та розважальні&nbsp;заклади,&nbsp;готельно-рекреаційну&nbsp;базу&nbsp;нашого*/}
+            {/*                    міста,&nbsp;заходи*/}
+            {/*                    та&nbsp;фестивалі, а&nbsp;також про багато іншого.</p>*/}
+            {/*                <p>Туристично-інформаційний центр є міським комунальним підприємством і надає*/}
+            {/*                    послуги&nbsp;екскурсійного*/}
+            {/*                    обслуговування&nbsp;у супроводі гідів-екскурсоводів.</p>*/}
+            {/*                <p>Основним завданням нашого центру є інформаційна підтримка та проведення екскурсій, тому*/}
+            {/*                    для нас*/}
+            {/*                    дуже важливо, щоб у Вас залишилися найкращі враження про нашу гостинну громаду.</p>*/}
+            {/*            </div>*/}
+            {/*            <Button variant="outline-secondary" size={"lg"} className={"border-2 rounded-0"}>Наші*/}
+            {/*                контакти</Button>*/}
+            {/*        </Col>*/}
+            {/*        <Col xs={12} md={5}>*/}
+            {/*            <img src={castle1} alt=""/>*/}
+            {/*        </Col>*/}
+            {/*    </Row>*/}
+            {/*</PageSectionWrapper>*/}
             <PageSectionWrapper id={"services"}>
                 <Row>
                     <Col xs={12} md={8} lg={8} className={"sb-items-grid__content"}>
@@ -113,7 +115,7 @@ function App() {
                 <Row className={"our_services_list card_list"}>
                     {ourServicesArray.map(({title, text, imageSrc}, index) => (
                         <Col className={"card_container"} key={index + title} xs={12} md={4}>
-                            <MyCardComponent text={text} title={title} imageSrc={imageSrc}/>
+                            <MyCardComponent typeView={2} text={text} title={title} imageSrc={imageSrc}/>
                         </Col>
                     ))}
                 </Row>

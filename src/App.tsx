@@ -9,7 +9,6 @@ import Footer from "./components/Footer/Footer";
 import {useState} from "react";
 import React from 'react'
 import MapEmbed from "./components/MapEmbed";
-import UncontrolledExample from "./components/Slider/UncontrolledExample";
 import AboutBlock from "./components/AboutBlock/AboutBlock";
 
 
@@ -135,29 +134,29 @@ function App() {
                     ))}
                 </Row>
             </PageSectionWrapper>
-            <PageSectionWrapper id={"image-carousel"}>
-                <Row className={"gx-5 align-items-center"}>
-                    <Col xs={12} md={"6"}>
+            {/*<PageSectionWrapper id={"image-carousel"}>*/}
+            {/*    <Row className={"gx-5 align-items-center"}>*/}
+            {/*        <Col xs={12} md={"6"}>*/}
 
-                        <h6 className="sb-text-image__content-title">
-                            Сувеніри з Теребовлі
-                            <br/>
-                            Символіка нашого міста
-                            <br/>
-                            рЕЧІ З історіею</h6>
-                        <p className="fs-2">
-                            We work collaboratively with our clients to uncover the most effective and efficient way to
-                            achieve their needs.
-                        </p>
+            {/*            <h6 className="sb-text-image__content-title">*/}
+            {/*                Сувеніри з Теребовлі*/}
+            {/*                <br/>*/}
+            {/*                Символіка нашого міста*/}
+            {/*                <br/>*/}
+            {/*                рЕЧІ З історіею</h6>*/}
+            {/*            <p className="fs-2">*/}
+            {/*                We work collaboratively with our clients to uncover the most effective and efficient way to*/}
+            {/*                achieve their needs.*/}
+            {/*            </p>*/}
 
-                    </Col>
-                    <Col xs={12} md={"6"}>
-                        <UncontrolledExample/>
-                    </Col>
+            {/*        </Col>*/}
+            {/*        <Col xs={12} md={"6"}>*/}
+            {/*            <UncontrolledExample/>*/}
+            {/*        </Col>*/}
 
-                </Row>
+            {/*    </Row>*/}
 
-            </PageSectionWrapper>
+            {/*</PageSectionWrapper>*/}
             <PageSectionWrapper id={"contacts"}>
 
                 <Row className={"gx-md-5"}>

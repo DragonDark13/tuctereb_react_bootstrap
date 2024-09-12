@@ -21,7 +21,7 @@ const MyCardComponent = ({
             <Card.Img className={"rounded-0"} variant="top" src={imageSrc}/>
             <Card.Body className={typeView==2 ? "ps-0 pe-0" : ""}>
                 <Card.Title className={"fs-6 fw-bold"}>{title}</Card.Title>
-                <Card.Text className={"fs-5"}>
+                <Card.Text className={"fs-6"}>
                     {text}
                 </Card.Text>
             </Card.Body>

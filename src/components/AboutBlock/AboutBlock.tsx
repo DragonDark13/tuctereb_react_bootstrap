@@ -4,8 +4,8 @@ import historyImg from '../../assets/img/history.png'
 const AboutBlock = () => {
     return (
         <PageSectionWrapper id={"about"}>
-            <h5 className="sb-text-image__content-title">Історія Теребовлі
-</h5>
+            <h6 className="sb-text-image__content-title">Історія Теребовлі
+</h6>
             <img src={historyImg} alt=""/>
             <p>Точного року, коли було засноване місто
                 ніхто не може сказати, але перша письмова згадка датується за часів князювання <strong>Василька

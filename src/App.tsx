@@ -107,7 +107,7 @@ function App() {
             <PageSectionWrapper id={"services"}>
                 <Row>
                     <Col xs={12} md={8} lg={8} className={"sb-items-grid__content"}>
-                        <h5 className="sb-text-image__content-title">Що відвідати, де перекусити та де зупинитись</h5>
+                        <h6 className="sb-text-image__content-title">Що відвідати, де перекусити та де зупинитись</h6>
                         <p className="fs-2">Індивідуальний досвід для кожного мандрівника</p>
                     </Col>
                 </Row>
@@ -123,8 +123,8 @@ function App() {
             <PageSectionWrapper id={"products-overview"}>
                 <Row>
                     <Col xs={12} md={8} lg={8} className={"sb-items-grid__content"}>
-                        <h5 className="sb-text-image__content-title">Наші послуги</h5>
-                        <p className="fs-2">Індивідуальний досвід для кожного мандрівника</p>
+                        <h6 className="sb-text-image__content-title">Наші послуги</h6>
+                        <p className="fs-6 title_sub-title">Індивідуальний досвід для кожного мандрівника</p>
                     </Col>
                 </Row>
                 <Row className={"our_services_list"}>
@@ -139,12 +139,12 @@ function App() {
                 <Row className={"gx-5 align-items-center"}>
                     <Col xs={12} md={"6"}>
 
-                        <h5 className="sb-text-image__content-title">
+                        <h6 className="sb-text-image__content-title">
                             Сувеніри з Теребовлі
                             <br/>
                             Символіка нашого міста
                             <br/>
-                            рЕЧІ З історіею</h5>
+                            рЕЧІ З історіею</h6>
                         <p className="fs-2">
                             We work collaboratively with our clients to uncover the most effective and efficient way to
                             achieve their needs.
@@ -159,8 +159,14 @@ function App() {
 
             </PageSectionWrapper>
             <PageSectionWrapper id={"contacts"}>
+
                 <Row className={"gx-md-5"}>
                     <Col xs={12} md={6}>
+                        <h6 className="sb-text-image__content-title">
+                           Запитайте у нас</h6>
+                        <p className="fs-6 title_sub-title">
+                           Ми працюємо щоб надати Вам максимум інформації про нашу громаду та створити відчуття комфорту
+                        </p>
 
                         <div className="contact-full__location">
                             <div>

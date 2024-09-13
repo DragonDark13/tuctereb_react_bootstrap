@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header";
 
 import PageSectionWrapper from "./components/PageSectionWrapper/PageSectionWrapper";
-import {Col, Container, Row} from "react-bootstrap";
+import { Col, Container, Row} from "react-bootstrap";
 import city from './assets/img/city.jpeg'
 import MyCardComponent from "./components/MyCardComponent/MyCardComponent";
 import 'bootstrap-icons/font/bootstrap-icons.css';
@@ -10,6 +10,7 @@ import {useState} from "react";
 import React from 'react'
 import MapEmbed from "./components/MapEmbed";
 import AboutBlock from "./components/AboutBlock/AboutBlock";
+import {Button} from "react-scroll";
 
 
 const ourServicesArray = [
@@ -133,6 +134,14 @@ function App() {
                         </Col>
                     ))}
                 </Row>
+                <Row>
+                    <Col>
+                        <Button  to="contacts" smooth={true} duration={500}
+                                            className={" btn border-2 rounded-0 btn-lg btn-outline-secondary"}>
+                            Зв'яжіться з нами
+                        </Button>
+                    </Col>
+                </Row>
             </PageSectionWrapper>
             {/*<PageSectionWrapper id={"image-carousel"}>*/}
             {/*    <Row className={"gx-5 align-items-center"}>*/}
@@ -162,9 +171,10 @@ function App() {
                 <Row className={"gx-md-5"}>
                     <Col xs={12} md={6}>
                         <h6 className="sb-text-image__content-title">
-                           Запитайте у нас</h6>
+                            Запитайте у нас</h6>
                         <p className="fs-6 title_sub-title">
-                           Ми працюємо щоб надати Вам максимум інформації про нашу громаду та створити відчуття комфорту
+                            Ми працюємо щоб надати Вам максимум інформації про нашу громаду та створити відчуття
+                            комфорту
                         </p>
 
                         <div className="contact-full__location">
@@ -216,39 +226,39 @@ function App() {
                                     </p>
                                 </div>
 
-                                <div className="contact-details__row contact-details__hours sb-hours-wrapper">
-                                    <h6 className="contact-details__title fw-bold">Hours</h6>
-                                    <ol aria-label="Working hours" className="hours-list list-unstyled">
-                                        <li className="hours-list__item d-flex">
-                                            <span className="hours-list__day">Monday</span>
-                                            <span className="ms-auto">9:00am – 5:00pm</span>
-                                        </li>
-                                        <li className="hours-list__item d-flex">
-                                            <span className="hours-list__day">Tuesday</span>
-                                            <span className="ms-auto">9:00am – 5:00pm</span>
-                                        </li>
-                                        <li className="hours-list__item d-flex">
-                                            <span className="hours-list__day">Wednesday</span>
-                                            <span className="ms-auto">9:00am – 5:00pm</span>
-                                        </li>
-                                        <li className="hours-list__item d-flex">
-                                            <span className="hours-list__day">Thursday</span>
-                                            <span className="ms-auto">9:00am – 5:00pm</span>
-                                        </li>
-                                        <li className="hours-list__item d-flex">
-                                            <span className="hours-list__day">Friday</span>
-                                            <span className="ms-auto">9:00am – 5:00pm</span>
-                                        </li>
-                                        <li className="hours-list__item d-flex">
-                                            <span className="hours-list__day">Saturday</span>
-                                            <span className="ms-auto">10:00am – 4:00pm</span>
-                                        </li>
-                                        <li className="hours-list__item d-flex">
-                                            <span className="hours-list__day">Sunday</span>
-                                            <span className="ms-auto">Closed</span>
-                                        </li>
-                                    </ol>
-                                </div>
+                                {/*<div className="contact-details__row contact-details__hours sb-hours-wrapper">*/}
+                                {/*    <h6 className="contact-details__title fw-bold">Hours</h6>*/}
+                                {/*    <ol aria-label="Working hours" className="hours-list list-unstyled">*/}
+                                {/*        <li className="hours-list__item d-flex">*/}
+                                {/*            <span className="hours-list__day">Monday</span>*/}
+                                {/*            <span className="ms-auto">9:00am – 5:00pm</span>*/}
+                                {/*        </li>*/}
+                                {/*        <li className="hours-list__item d-flex">*/}
+                                {/*            <span className="hours-list__day">Tuesday</span>*/}
+                                {/*            <span className="ms-auto">9:00am – 5:00pm</span>*/}
+                                {/*        </li>*/}
+                                {/*        <li className="hours-list__item d-flex">*/}
+                                {/*            <span className="hours-list__day">Wednesday</span>*/}
+                                {/*            <span className="ms-auto">9:00am – 5:00pm</span>*/}
+                                {/*        </li>*/}
+                                {/*        <li className="hours-list__item d-flex">*/}
+                                {/*            <span className="hours-list__day">Thursday</span>*/}
+                                {/*            <span className="ms-auto">9:00am – 5:00pm</span>*/}
+                                {/*        </li>*/}
+                                {/*        <li className="hours-list__item d-flex">*/}
+                                {/*            <span className="hours-list__day">Friday</span>*/}
+                                {/*            <span className="ms-auto">9:00am – 5:00pm</span>*/}
+                                {/*        </li>*/}
+                                {/*        <li className="hours-list__item d-flex">*/}
+                                {/*            <span className="hours-list__day">Saturday</span>*/}
+                                {/*            <span className="ms-auto">10:00am – 4:00pm</span>*/}
+                                {/*        </li>*/}
+                                {/*        <li className="hours-list__item d-flex">*/}
+                                {/*            <span className="hours-list__day">Sunday</span>*/}
+                                {/*            <span className="ms-auto">Closed</span>*/}
+                                {/*        </li>*/}
+                                {/*    </ol>*/}
+                                {/*</div>*/}
 
                             </div>
                         </div>

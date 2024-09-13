@@ -5,6 +5,7 @@ import {useState} from "react";
 import React from 'react'
 import {Route, Routes, HashRouter as Router} from 'react-router-dom';
 import MainPageContent from "./routes/MainPageContent";
+import Places from "./routes/Places";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                 <Header setHeaderHeight={setHeaderHeight}/>
                 <Routes>
                     <Route path="/" element={<MainPageContent headerHeight={headerHeight}/>}/>
+                    <Route path='/places' element={<Places/>}/>
                 </Routes>
                 <Footer/>
             </React.Fragment>

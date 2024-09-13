@@ -1,5 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import city from '../../assets/img/city.jpeg'
+import {Button} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 interface IMyCardComponent {
     imageSrc?: string,
@@ -15,15 +17,16 @@ const MyCardComponent = ({
                              typeView = 1
                          }: IMyCardComponent) => {
     return (
-        <Card className={typeView==1 ? "rounded-0 border-0 shadow our_services_card" : "rounded-0 border-0" +
+        <Card className={typeView == 1 ? "rounded-0 border-0 shadow our_services_card" : "rounded-0 border-0" +
             " bg-transparent" +
             " our_product_card"}>
             <Card.Img className={"rounded-0"} variant="top" src={imageSrc}/>
-            <Card.Body className={typeView==2 ? "ps-0 pe-0" : ""}>
+            <Card.Body className={typeView == 2 ? "ps-0 pe-0" : ""}>
                 <Card.Title className={"fs-6 fw-bold"}>{title}</Card.Title>
                 <Card.Text className={"fs-6"}>
                     {text}
                 </Card.Text>
+                <Button as={Link} to='/#/places' variant="outline-secondary" className={"border-2 rounded-0 btn-lg"}>Go somewhere</Button>
             </Card.Body>
         </Card>
     );

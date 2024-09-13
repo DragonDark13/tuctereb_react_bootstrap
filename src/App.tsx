@@ -1,16 +1,8 @@
 import Header from "./components/Header/Header";
-
-import PageSectionWrapper from "./components/PageSectionWrapper/PageSectionWrapper";
-import {Col, Container, Row} from "react-bootstrap";
-import city from './assets/img/city.jpeg'
-import MyCardComponent from "./components/MyCardComponent/MyCardComponent";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Footer from "./components/Footer/Footer";
 import {useState} from "react";
 import React from 'react'
-import MapEmbed from "./components/MapEmbed";
-import AboutBlock from "./components/AboutBlock/AboutBlock";
-import {Button} from "react-scroll";
 import {Route, Routes, HashRouter as Router} from 'react-router-dom';
 import MainPageContent from "./routes/MainPageContent";
 

@@ -8,13 +8,15 @@ interface IMyCardComponent {
     title?: string,
     text?: string,
     typeView?: 1 | 2,
+    IsButton?: boolean,
 }
 
 const MyCardComponent = ({
                              imageSrc = city,
                              title = "Цікаві місця",
                              text = "Відкрийте для себе багату історію та культуру Теребовлі та громади.",
-                             typeView = 1
+                             typeView = 1,
+                             IsButton = false
                          }: IMyCardComponent) => {
     return (
         <Card className={typeView == 1 ? "rounded-0 border-0 shadow our_services_card" : "rounded-0 border-0" +
@@ -26,7 +28,9 @@ const MyCardComponent = ({
                 <Card.Text className={"fs-6"}>
                     {text}
                 </Card.Text>
-                <Button as={Link} to='/#/places' variant="outline-secondary" className={"border-2 rounded-0 btn-lg"}>Go somewhere</Button>
+                {IsButton && <Button as={Link} to='/places' variant="outline-secondary"
+                         className={"border-2 rounded-0 btn-lg  mt-2"}>Переглянути
+                </Button>}
             </Card.Body>
         </Card>
     );

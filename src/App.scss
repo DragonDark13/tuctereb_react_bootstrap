@@ -38,9 +38,14 @@ header.navbar {
   width: 100%;
 }
 
-.header_sticky_state .navbar {
-  background-color: #948a8a;
-  transition: background-color 0.2s ease-in-out;
+
+.header_sticky_state,
+.header_static_state {
+  .navbar {
+    background-color: #948a8a;
+    transition: background-color 0.2s ease-in-out;
+  }
+
 }
 
 .header_navbar {
@@ -56,6 +61,8 @@ header.navbar {
   .btn-outline-secondary {
     color: #fff;
     border-color: #fff;
+    border-radius: 0;
+    border-width: 2px;
   }
 
 
@@ -196,6 +203,21 @@ header.navbar {
 
 }
 
+.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
+  background-color: #E6276C;
+  border-color: #E6276C;
+}
+
+.btn {
+  font-weight: 500;
+
+
+}
+
+.btn.btn-primary {
+  border-radius: 0;
+}
+
 
 .sb-section-opt-light {
   background-color: #fff;
@@ -310,7 +332,7 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
   font-weight: 600;
 }
 
-.title_sub-title{
+.title_sub-title {
   font-weight: 600;
 }
 
@@ -588,12 +610,12 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
     opacity: 1;
     margin: 5px;
 
-    &.active{
+    &.active {
       background-color: #C31755;
     }
 
-    &:active,&:focus{
-      box-shadow: 0 0 0 3px rgba(195,23,85,0.3);
+    &:active, &:focus {
+      box-shadow: 0 0 0 3px rgba(195, 23, 85, 0.3);
     }
   }
 }

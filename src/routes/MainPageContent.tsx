@@ -108,7 +108,7 @@ const ourProdutsArray = [
                 <Row className={"our_services_list card_list"}>
                     {ourServicesArray.map(({title, text, imageSrc}, index) => (
                         <Col className={"card_container"} key={index + title} xs={12} md={4}>
-                            <MyCardComponent typeView={2} text={text} title={title} imageSrc={imageSrc}/>
+                            <MyCardComponent IsButton={true} typeView={2} text={text} title={title} imageSrc={imageSrc}/>
                         </Col>
                     ))}
                 </Row>
@@ -124,7 +124,7 @@ const ourProdutsArray = [
                 <Row className={"our_services_list"}>
                     {ourProdutsArray.map(({title, text, imageSrc}, index) => (
                         <Col key={index + title} md={4}>
-                            <MyCardComponent typeView={2} text={text} title={title} imageSrc={imageSrc}/>
+                            <MyCardComponent  typeView={2} text={text} title={title} imageSrc={imageSrc}/>
                         </Col>
                     ))}
                 </Row>

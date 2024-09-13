@@ -6,6 +6,7 @@ import '../../App.scss';
 import Sticky from 'react-sticky-el';
 import {Link, Button} from 'react-scroll';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import {useLocation} from 'react-router-dom';
 
 interface IHeader {
     setHeaderHeight: (arg0: number) => void;
@@ -14,6 +15,24 @@ interface IHeader {
 const Header = ({setHeaderHeight}: IHeader) => {
     const headerRef = useRef<HTMLDivElement>(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false); // Стан для відкритого меню
+    const [isSticky, setIsSticky] = useState(true); // Стан для застійного підвищення заголовка]
+
+    const location = useLocation();
+
+    // Перевірка поточного шляху
+    const isMainPage = location.pathname === '/';
+    console.log(isMainPage ? "isMainPage" : "isMainPage!!!");
+
+    useEffect(() => {
+        const isMainPage = location.pathname === '/';
+        if (isMainPage) {
+            setIsSticky(true)
+        } else {
+            setIsSticky(false)
+
+        }
+
+    }, [location])
 
     useEffect(() => {
         if (headerRef.current && headerRef.current.offsetHeight) {
@@ -31,8 +50,8 @@ const Header = ({setHeaderHeight}: IHeader) => {
     };
 
     return (
-        <div className="stickyHeaderContainer" ref={headerRef}>
-            <Sticky stickyClassName={'header_sticky_state'} boundaryElement=".block" hideOnBoundaryHit={false}>
+        <div className={`stickyHeaderContainer ${!isSticky ? "header_static_state" : ""}`} ref={headerRef}>
+            <Sticky disabled={!isSticky} stickyClassName={'header_sticky_state'} boundaryElement=".block" hideOnBoundaryHit={false}>
                 <Navbar expand="lg" className={`header_navbar`}>
                     <Container fluid={"xl"} className={"d-flex flex-wrap"}>
                         <Navbar.Brand className={"navbar-logo text-white"} href="#home">TIC.TEREBOVLIA</Navbar.Brand>
@@ -66,7 +85,7 @@ const Header = ({setHeaderHeight}: IHeader) => {
                                         <span className={"hover_bl"}></span>
                                     </Nav.Link>
                                     <Button to="contacts" smooth={true} duration={500}
-                                            className={" btn border-2 rounded-0 btn-lg btn-outline-secondary text-white"}
+                                            className={" btn btn-lg btn-outline-secondary text-white"}
                                             onClick={handleCloseMenu}>КОНТАКТИ</Button>
                                 </Nav>
                             </Offcanvas.Body>

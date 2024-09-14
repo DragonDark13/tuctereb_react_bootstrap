@@ -6,7 +6,7 @@ import '../../App.scss';
 import Sticky from 'react-sticky-el';
 import {scroller} from 'react-scroll';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import {useLocation, Link as RouterLink, redirect, useNavigate} from 'react-router-dom';
+import {useLocation, Link as RouterLink, useNavigate} from 'react-router-dom';
 import {Button} from "react-bootstrap";
 
 interface IHeader {
@@ -52,7 +52,7 @@ const Header = ({setHeaderHeight}: IHeader) => {
         setIsMenuOpen(false); // Закриваємо меню
     };
 
-    const handleClick = (id) => {
+    const handleClick = (id:string) => {
         // Встановлюємо цільовий блок
         setTargetId(id);
         // Переходимо на головну сторінку
@@ -117,7 +117,7 @@ const Header = ({setHeaderHeight}: IHeader) => {
                                         <span className={"hover_bl"}></span>
                                     </Nav.Link>
 
-                                    <Button size={"lg"} variant={"outline-secondary"} to="contacts"
+                                    <Button size={"lg"} variant={"outline-secondary"}
                                             className={" text-white"}
                                             onClick={() => handleClick('contacts')}>КОНТАКТИ</Button>
 

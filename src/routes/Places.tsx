@@ -6,15 +6,21 @@ import place2 from "../assets/img/place2.jpeg"
 import place3 from "../assets/img/place3.jpeg"
 import place4 from "../assets/img/place4.png"
 import place5 from "../assets/img/place5.jpeg"
-import {Link} from "react-router-dom";
-import { animateScroll as scroll } from 'react-scroll';
+import {useNavigate} from "react-router-dom";
+import {animateScroll as scroll} from 'react-scroll';
 
 const placesArray = [
 
     {
         imageSrc: place2,
         title: "Теребовлянський замок",
-        text: "Історія яду Теребовлянський замок набув за часів старости Олександра Балабана. Завершено будівництво нового замку у 1632-33 роках."
+        text: "Історія теребовлянських укріплень сягає своїми коренями у часи княжих міжусобиць, коли Теребовлею, княжою столицею, володів нащадок великого князя Ярослава Мудрого Василько Ростиславович. Уже тоді на Замковій Горі, було засноване давньоруське городище.\n" +
+            "\n" +
+            "У 1341 році, після переходу Теребовлі під владу Польщі в південній частині Замкової гори був закладений фундамент для майбутніх кам’яних укріплень. Тоді ж у скалі був висічений колодязь глибиною близько 44 метрів.\n" +
+            "\n" +
+            "Наступна згадка про замок датується 1534 роком. Новий замок стояв на сторожі міста близько століття, а залишки цих давніх укріплень виявлені археологами під час розкопок на території замку у 2012 році.\n" +
+            "\n" +
+            "Сучасного вигляду Теребовлянський замок набув за часів старости Олександра Балабана. Завершено будівництво нового замку у 1632-33 роках."
     },
     {
         imageSrc: place3,
@@ -41,17 +47,24 @@ const Places = () => {
             smooth: true,
         });
     };
+
+    const navigate = useNavigate();
+
+    function handleLinkClick(path) {
+        navigate(path);
+    }
+
     return (
         <React.Fragment>
             <PageSectionWrapper>
-                <Row  className={"align-items-center gy-4 gy-md-0"}>
+                <Row className={"align-items-center gy-4 gy-md-0"}>
                     <Col xs={12} md={7}>
                         <h6 className="sb-text-image__content-title">Цікаві місця
                         </h6>
                         <p>Побувавши у нашій громаді Ви зможете відвідати багато цікавих об'єктів та пам'яток
                             архітектури,
                             які були створені у різні етапи нашої історії</p>
-                        <Button as={Link} to={'/'} className={"btn-lg"}>Назад</Button>
+                        <Button  size={"lg"} onClick={() => handleLinkClick('/')}>Назад</Button>
                     </Col>
                     <Col xs={12} md={5}>
                         <img src={place1} alt="place1"/>

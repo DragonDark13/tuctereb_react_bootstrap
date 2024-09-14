@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import city from '../../assets/img/city.jpeg'
 import {Button} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Link as RouterLink, useNavigate} from "react-router-dom";
 
 interface IMyCardComponent {
     imageSrc?: string,
@@ -18,6 +18,13 @@ const MyCardComponent = ({
                              typeView = 1,
                              IsButton = false
                          }: IMyCardComponent) => {
+
+    const navigate = useNavigate();
+
+    function handleLinkClick(path) {
+        navigate(path);
+    }
+
     return (
         <Card className={typeView == 1 ? "rounded-0 border-0 shadow our_services_card" : "rounded-0 border-0" +
             " bg-transparent" +
@@ -28,9 +35,17 @@ const MyCardComponent = ({
                 <Card.Text className={"fs-6"}>
                     {text}
                 </Card.Text>
-                {IsButton && <Button as={Link} to='/places' variant="outline-secondary"
-                         className={"border-2 rounded-0 btn-lg  mt-2"}>Переглянути
-                </Button>}
+
+                {IsButton &&
+                <Button variant="outline-secondary"
+                        className={"border-2 rounded-0 btn-lg  mt-2"} onClick={() => handleLinkClick('/places')}>
+                    Переглянути
+                </Button>
+
+                    // <RouterLink className={'btn-outline-secondary'} to='/places' >Переглянути</RouterLink>
+
+
+                }
             </Card.Body>
         </Card>
     );

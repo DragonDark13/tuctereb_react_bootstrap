@@ -18,12 +18,16 @@ a, button, input, label, select, textarea {
   touch-action: manipulation;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: #191813;
+}
+
 img {
   max-width: 100%;
 }
 
 .sb-section-opt-light div, .sb-section-opt-light h1, .sb-section-opt-light h2, .sb-section-opt-light h3, .sb-section-opt-light h4, .sb-section-opt-light p, .sb-section-opt-light span, .sb-section-opt-light input {
-  color: #53513F;
+  color: #191813;
 }
 
 
@@ -129,6 +133,11 @@ header.navbar {
   background-color: #948a8a;
 }
 
+.navbar-brand a{
+  color: inherit;
+  text-decoration: none;
+}
+
 .header_nav_menu {
 
   @include media-breakpoint-down(md) {
@@ -230,6 +239,10 @@ header.navbar {
   position: relative;
   z-index: auto;
   padding: 20px;
+
+  p {
+    font-size: 1.1rem;
+  }
 }
 
 section.sb-section {
@@ -299,10 +312,21 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
   transition: all .15s ease-in-out;
 }
 
+a.btn-primary.btn,
+a.btn-primary.btn:visited {
+  color: #fff;
+
+}
+
 .btn-primary {
   color: #fff;
   border-color: #C31755;
   background-color: #C31755;
+
+  &[role="button"] {
+    color: #fff;
+
+  }
 
   &:hover {
     color: #fff;
@@ -539,6 +563,10 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
 
 .stickyHeaderContainer {
   overflow: hidden;
+}
+
+.stickyHeaderContainer:not(.header_static_state) {
+
   position: absolute;
   left: 0;
   right: 0;

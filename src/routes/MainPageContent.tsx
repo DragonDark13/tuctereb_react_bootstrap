@@ -8,7 +8,6 @@ import AboutBlock from "../components/AboutBlock/AboutBlock";
 import {Button} from "react-scroll";
 
 
-
 interface IMainPageContent {
     headerHeight: number
 }
@@ -75,7 +74,7 @@ const MainPageContent = ({headerHeight}: IMainPageContent) => {
                 </Row>
                 <Row className={"our_services_list card_list"}>
                     {ourServicesArray.map(({title, text, imageSrc}, index) => (
-                        <Col className={"card_container"} key={index + title} xs={12} md={4}>
+                        <Col data-aos-delay={`${50 * index}`} data-aos="fade-up" className={"card_container"} key={index + title} xs={12} md={4}>
                             <MyCardComponent IsButton={true} typeView={2} text={text} title={title}
                                              imageSrc={imageSrc}/>
                         </Col>
@@ -93,8 +92,8 @@ const MainPageContent = ({headerHeight}: IMainPageContent) => {
                 </Row>
                 <Row className={"our_services_list"}>
                     {ourProductsArray.map(({title, text, imageSrc}, index) => (
-                        <Col key={index + title} md={4}>
-                            <MyCardComponent  typeView={2} text={text} title={title}
+                        <Col data-aos-delay={`${50 * index}`} data-aos="fade-up" key={index + title} md={4}>
+                            <MyCardComponent typeView={2} text={text} title={title}
                                              imageSrc={imageSrc}/>
                         </Col>
                     ))}
@@ -119,7 +118,7 @@ const MainPageContent = ({headerHeight}: IMainPageContent) => {
                             Ми працюємо щоб надати Вам максимум інформації про нашу громаду та створити відчуття
                             комфорту
                         </p>
-                        <div className="contact-full__location">
+                        <div data-aos="slide-up" className="contact-full__location">
                             <div>
                                 <div className="contact-details__row contact-details__contact">
                                     <h6 className="contact-details__title fw-bold">Запитайте у нас</h6>

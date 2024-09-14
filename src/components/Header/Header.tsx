@@ -19,7 +19,7 @@ const Header = ({setHeaderHeight}: IHeader) => {
     const [isSticky, setIsSticky] = useState(true); // Стан для застійного підвищення заголовка]
     const location = useLocation();
     const navigation = useNavigate()
-    const [targetId, setTargetId] = useState(null); // зберігаємо ID блоку для скролу
+    const [targetId, setTargetId] = useState<string|null>(null); // зберігаємо ID блоку для скролу
 
 
     // Перевірка поточного шляху

@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import city from '../../assets/img/city.jpeg'
 import {Button} from "react-bootstrap";
-import {Link as RouterLink, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 interface IMyCardComponent {
     imageSrc?: string,
@@ -21,7 +21,7 @@ const MyCardComponent = ({
 
     const navigate = useNavigate();
 
-    function handleLinkClick(path) {
+    function handleLinkClick(path:string) {
         navigate(path);
     }
 

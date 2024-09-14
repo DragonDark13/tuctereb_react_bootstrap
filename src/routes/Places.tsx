@@ -50,7 +50,7 @@ const Places = () => {
 
     const navigate = useNavigate();
 
-    function handleLinkClick(path) {
+    function handleLinkClick(path:string) {
         navigate(path);
     }
 

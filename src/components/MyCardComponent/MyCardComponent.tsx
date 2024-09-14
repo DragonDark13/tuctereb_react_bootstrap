@@ -26,7 +26,7 @@ const MyCardComponent = ({
     }
 
     return (
-        <Card className={typeView == 1 ? "rounded-0 border-0 shadow our_services_card" : "rounded-0 border-0" +
+        <Card data-aos="fade-up" className={typeView == 1 ? "rounded-0 border-0 shadow our_services_card" : "rounded-0 border-0" +
             " bg-transparent" +
             " our_product_card"}>
             <Card.Img className={"rounded-0"} variant="top" src={imageSrc}/>

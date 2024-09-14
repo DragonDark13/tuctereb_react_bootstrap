@@ -58,7 +58,7 @@ const Places = () => {
         <React.Fragment>
             <PageSectionWrapper>
                 <Row className={"align-items-center gy-4 gy-md-0"}>
-                    <Col xs={12} md={7}>
+                    <Col xs={12} md={7} data-aos="slide-right">
                         <h6 className="sb-text-image__content-title">Цікаві місця
                         </h6>
                         <p>Побувавши у нашій громаді Ви зможете відвідати багато цікавих об'єктів та пам'яток
@@ -66,30 +66,30 @@ const Places = () => {
                             які були створені у різні етапи нашої історії</p>
                         <Button  size={"lg"} onClick={() => handleLinkClick('/')}>Назад</Button>
                     </Col>
-                    <Col xs={12} md={5}>
+                    <Col xs={12} md={5} data-aos="slide-left">
                         <img src={place1} alt="place1"/>
                     </Col>
                 </Row>
             </PageSectionWrapper>
             <PageSectionWrapper>
                 <Row>
-                    <Col xs={12} md={8} lg={8} className={"sb-items-grid__content"}>
+                    <Col data-aos="fade-up" xs={12} md={8} lg={8} className={"sb-items-grid__content"}>
                         <h2>Деякі з цікавинок які можна у нас побачити</h2>
 
                     </Col>
                 </Row>
                 {placesArray.map((place, index) => (
                     <Row className={"align-items-center mt-4 mb-4 gy-2 gy-md-0"} key={place.title + index}>
-                        <Col xs={12} md={5}>
+                        <Col xs={12} md={5} data-aos="slide-right">
                             <img src={place.imageSrc} alt={place.title}/>
                         </Col>
-                        <Col xs={12} md={7}>
+                        <Col xs={12} md={7} data-aos="slide-left">
                             <h5>{place.title}</h5>
                             <p>{place.text}</p>
                         </Col>
                     </Row>
                 ))}
-                <Button className={"btn-lg"} onClick={scrollToTop}>Вверх</Button>
+                <Button data-aos="fade-up" className={"btn-lg"} onClick={scrollToTop}>Вверх</Button>
             </PageSectionWrapper>
         </React.Fragment>
     );

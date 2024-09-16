@@ -1,0 +1,18 @@
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+}
+
+.stickyHeaderContainer {
+  overflow: hidden;
+}
+
+.stickyHeaderContainer:not(.header_static_state) {
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 300;
+}

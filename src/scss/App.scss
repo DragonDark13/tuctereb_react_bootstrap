@@ -1,0 +1,39 @@
+// Імпорт змінних
+@import 'base/variables';
+
+// Базові стилі
+@import 'base/base';
+
+// Лейаути
+@import 'layout/navbar';
+@import 'layout/footer';
+@import 'layout/carousel';
+@import "layout/section";
+@import 'layout/map';
+
+// Модулі
+@import 'bg_section';
+@import 'module/forms';
+@import 'module/buttons';
+@import 'module/social_icons';
+@import "module/card";
+
+// Стан
+@import 'state/sticky_nav';
+
+// Теми
+@import 'theme/light_theme';
+@import 'theme/dark_theme';
+
+
+
+
+
+
+
+
+
+
+
+
+

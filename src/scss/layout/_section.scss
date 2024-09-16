@@ -1,0 +1,118 @@
+
+
+.sb-section-opt-dark {
+  background-color: #948a8a;
+}
+
+
+
+
+.sb-section-opt-light {
+  background-color: #fff;
+}
+
+
+.sb-section {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: auto;
+  padding: 20px;
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+section.sb-section {
+  overflow: hidden;
+}
+
+.sb-row-opt-padding-bottom-large {
+  padding-bottom: 20px;
+  @include media-breakpoint-up(md) {
+    padding-bottom: 80px;
+  }
+}
+
+.sb-row-opt-padding-top-large {
+  padding-top: 20px;
+  @include media-breakpoint-up(md) {
+    padding-top: 80px;
+  }
+}
+
+.sb-section-opt-light .sb-text-image__content-title {
+  color:$pink;
+}
+
+option-title-show-decoration-square.sb-section-opt-light .sb-section-title::before, .option-title-show-decoration-square.sb-section-opt-light .sb-text-image__content-title::before {
+  background-color: $pink;
+}
+
+.option-title-show-decoration-square .sb-section-title:not(.is-title-empty)::before, .option-title-show-decoration-square .sb-text-image__content-title:not(.is-title-empty)::before {
+  display: inline-block;
+  content: '';
+  width: 0.75em;
+  height: 0.75em;
+  margin-right: 0.375em;
+}
+
+.sb-section-opt-light a, .sb-section-opt-light a:link, .sb-section-opt-light a:visited {
+  color: #53513F;
+}
+
+
+.sb-section-opt-light .btn-outline-secondary, .sb-section-opt-light .btn-outline-secondary:link, .sb-section-opt-light .btn-outline-secondary:visited {
+  color: #191813;
+  border-color: #191813;
+  background-color: transparent;
+}
+
+
+
+
+.sb-section-opt-light:nth-of-type(2n+3) {
+  background-color: #ECECE9;
+}
+
+.sb-text-image__content-title {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.title_sub-title {
+  font-weight: 600;
+}
+
+.sb-items-grid__content {
+  margin-bottom: 40px;
+
+  p {
+    color: #191813;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.sb-section-opt-dark div, .sb-section-opt-dark h1, .sb-section-opt-dark h2, .sb-section-opt-dark h3, .sb-section-opt-dark h4, .sb-section-opt-dark p, .sb-section-opt-dark span, .sb-section-opt-dark input {
+  color: #fff;
+}
+
+
+.sb-section-opt-dark a {
+
+  &, &:hover, &:focus, &:active {
+    color: #fff;
+  }
+}
+
+.sb-section-opt-dark .navbar-brand, .sb-section-opt-dark .navbar-brand:link, .sb-section-opt-dark .navbar-brand:visited {
+  color: #fff;
+}

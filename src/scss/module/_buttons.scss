@@ -1,0 +1,72 @@
+
+.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
+  background-color: $dark-pink;
+  border-color: $dark-pink;
+}
+
+.btn {
+  font-weight: 500;
+
+
+}
+
+.btn.btn-primary {
+  border-radius: 0;
+}
+
+
+.btn-outline-secondary {
+  border-color: #fff;
+  border-style: solid;
+}
+
+.btn-lg {
+  padding: 10px 30px;
+  font-size: 1rem;
+}
+
+
+.btn-outline-secondary:hover,
+.btn-outline-secondary:link:hover,
+.btn-outline-secondary:visited:hover {
+  color: #fff;
+  border-color:$pink;
+  background-color:$pink;
+}
+
+.btn {
+  transition: all .15s ease-in-out;
+}
+
+a.btn-primary.btn,
+a.btn-primary.btn:visited {
+  color: #fff;
+
+}
+
+.btn-primary {
+  color: #fff;
+  border-color:$pink;
+  background-color:$pink;
+
+  &[role="button"] {
+    color: #fff;
+
+  }
+
+  &:hover {
+    color: #fff;
+    border-color: $pink-hover;
+    background-color: $pink-hover;
+  }
+
+  &:focus, &:link:focus, &:visited:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px $dark-pink;
+  }
+
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}

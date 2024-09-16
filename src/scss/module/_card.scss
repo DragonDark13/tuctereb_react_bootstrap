@@ -1,0 +1,50 @@
+
+.our_services_list .our_services_card {
+  height: 100%;
+  //transition-duration: .15s;
+  //transition-property: transform;
+
+  //&:hover {
+  //  transform: scale(1.05);
+  //}
+}
+
+.our_services_list .our_product_card {
+
+  img{
+        transition: all 0.3s ease-in-out;
+  }
+
+  a{
+    position: relative;
+    overflow: hidden;
+
+    &:hover  img{
+
+       opacity: 0.7;
+
+    }
+  }
+  a:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+
+}
+
+.sb-section-opt-light .card-title {
+  color: #191813;
+}
+
+
+.card_container {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}

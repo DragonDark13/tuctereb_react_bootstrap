@@ -2,7 +2,7 @@ import {useState, useEffect, useRef} from "react";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import '../../App.scss';
+import '../../scss/App.scss';
 import Sticky from 'react-sticky-el';
 import {scroller} from 'react-scroll';
 import Offcanvas from 'react-bootstrap/Offcanvas';

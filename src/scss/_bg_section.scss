@@ -41,7 +41,12 @@
   }
 
   .bg_section_main_title {
-    //font-size: 4rem;
+    font-size: 2rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 4rem;
+    }
+
     color: #fff;
     letter-spacing: 0;
   }

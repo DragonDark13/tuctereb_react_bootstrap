@@ -73,18 +73,18 @@ const Places = () => {
             </PageSectionWrapper>
             <PageSectionWrapper>
                 <Row>
-                    <Col data-aos="fade-up" xs={12} md={8} lg={8} className={"sb-items-grid__content"}>
+                    <Col data-aos="fade-up" xs={12} md={10} lg={10} className={"sb-items-grid__content"}>
                         <h2>Деякі з цікавинок які можна у нас побачити</h2>
 
                     </Col>
                 </Row>
                 {placesArray.map((place, index) => (
-                    <Row className={"align-items-center mt-4 mb-4 gy-2 gy-md-0"} key={place.title + index}>
+                    <Row className={"align-items-center mt-4 mb-4 gy-2 gy-md-0 place_item"} key={place.title + index}>
                         <Col xs={12} md={5} data-aos="slide-right">
                             <img src={place.imageSrc} alt={place.title}/>
                         </Col>
                         <Col xs={12} md={7} data-aos="slide-left">
-                            <h5>{place.title}</h5>
+                            <h4 className={"title"}>{place.title}</h4>
                             <p>{place.text}</p>
                         </Col>
                     </Row>

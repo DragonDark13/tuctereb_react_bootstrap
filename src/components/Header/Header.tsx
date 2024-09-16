@@ -82,7 +82,7 @@ const Header = ({setHeaderHeight}: IHeader) => {
             <Sticky disabled={!isSticky} stickyClassName={'header_sticky_state'} boundaryElement=".block"
                     hideOnBoundaryHit={false}>
                 <Navbar expand="lg" className={`header_navbar`}>
-                    <Container fluid={"xl"} className={"d-flex flex-wrap"}>
+                    <Container fluid={"lg"} className={"d-flex flex-wrap"}>
                         <Navbar.Brand className={"navbar-logo text-white"}>
                             <RouterLink to={'/'}>TIC.TEREBOVLIA</RouterLink>
                         </Navbar.Brand>

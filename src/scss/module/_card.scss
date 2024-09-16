@@ -11,21 +11,22 @@
 
 .our_services_list .our_product_card {
 
-  img{
-        transition: all 0.3s ease-in-out;
+  img {
+    transition: all 0.3s ease-in-out;
   }
 
-  a{
+  a {
     position: relative;
     overflow: hidden;
 
-    &:hover  img{
+    &:hover img {
 
-       opacity: 0.7;
+      opacity: 0.7;
 
     }
   }
-  a:after{
+
+  a:after {
     content: '';
     position: absolute;
     left: 0;
@@ -47,4 +48,22 @@
 .card_container {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+
+.place_item {
+  padding: 0.75rem 0;
+
+  &:nth-child(even){
+      background: hsl(114 62% 77% / 1);
+
+  }
+
+  .title {
+    margin-bottom: 1rem;
+  }
+
+  p:last-child{
+    margin-bottom: 0;
+  }
 }

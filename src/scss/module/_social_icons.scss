@@ -46,9 +46,9 @@
   a {
     display: block;
     font-size: 20px;
-
-
     margin-right: 10px;
+    transition: 0.3s all ease-in-out;
+
 
 
     &:hover i {
@@ -56,4 +56,10 @@
     }
   }
 
+}
+
+footer .social-icons a{
+      &:hover{
+      transform: scale(1.2);
+    }
 }

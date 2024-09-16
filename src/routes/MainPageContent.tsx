@@ -52,8 +52,8 @@ const MainPageContent = ({headerHeight}: IMainPageContent) => {
                 <Container className={"sb-container align-items-start justify-content-center flex-column"}>
                     <Row
                         className={"pt-5 align-items-center text-center sb-row-opt-padding-bottom-large sb-row-opt-padding-top-large justify-content-center"}>
-                        <Col xs={12} md={8} lg={7}>
-                            <h1 data-aos="fade-up" className="bg_section_main_title fs-1">TEREBOVLIA TOURIST INFORMATION
+                        <Col xs={12} md={11} lg={10}>
+                            <h1 data-aos="fade-up" className="bg_section_main_title">TEREBOVLIA TOURIST INFORMATION
                                 CENTER</h1>
                             <h4 data-aos="fade-up" className="bg_section_small_title fs-4">
                                 ТЕРЕБОВЛЯНСЬКИЙ ТУРИСТИЧНИЙ ІНФОРМАЦІЙНИЙ ЦЕНТР
@@ -99,8 +99,8 @@ const MainPageContent = ({headerHeight}: IMainPageContent) => {
                     ))}
                 </Row>
                 <Row>
-                    <Col>
-                        <Button data-aos="slide-up" to="contacts" smooth={true} duration={500}
+                    <Col data-aos="slide-up">
+                        <Button  to="contacts" smooth={true} duration={500}
                                 className={"btn border-2 rounded-0 btn-lg btn-outline-secondary"}>
                             Зв'яжіться з нами
                         </Button>

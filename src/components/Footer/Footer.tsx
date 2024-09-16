@@ -1,5 +1,6 @@
 import PageSectionWrapper from "../PageSectionWrapper/PageSectionWrapper";
 import {Col, Nav, Navbar, Row, Stack} from "react-bootstrap";
+import { Link as RouterLink} from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -9,7 +10,7 @@ const Footer = () => {
                 <Row className={"align-items-center"}>
                     <Col xs={12} md={10}>
                         <Navbar className={"pb-0 pt-0"}>
-                            <Navbar.Brand href="#home">tuctereb</Navbar.Brand>
+                            <Navbar.Brand href="#home"><RouterLink to={'/'}>tic.terebovlia</RouterLink></Navbar.Brand>
                         </Navbar>
 
                         <Navbar className={"footer_navbar pb-0 pt-0 "}>

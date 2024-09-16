@@ -4,10 +4,13 @@
   border-color: $dark-pink;
 }
 
+.sb-section-opt-light .btn:focus, .sb-section-opt-light .btn:link:focus, .sb-section-opt-light .btn:visited:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px $dark-pink;
+}
+
 .btn {
   font-weight: 500;
-
-
+  transition: 0.3s background-color ease-in-out;
 }
 
 .btn.btn-primary {
@@ -30,8 +33,8 @@
 .btn-outline-secondary:link:hover,
 .btn-outline-secondary:visited:hover {
   color: #fff;
-  border-color:$pink;
-  background-color:$pink;
+  border-color: $pink;
+  background-color: $pink;
 }
 
 .btn {
@@ -46,8 +49,8 @@ a.btn-primary.btn:visited {
 
 .btn-primary {
   color: #fff;
-  border-color:$pink;
-  background-color:$pink;
+  border-color: $pink;
+  background-color: $pink;
 
   &[role="button"] {
     color: #fff;

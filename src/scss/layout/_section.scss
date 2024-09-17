@@ -62,8 +62,8 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
 
 
 .sb-section-opt-light .btn-outline-secondary, .sb-section-opt-light .btn-outline-secondary:link, .sb-section-opt-light .btn-outline-secondary:visited {
-  color: #191813;
-  border-color: #191813;
+  color: $black;
+  border-color: $black;
   background-color: transparent;
 }
 
@@ -87,7 +87,7 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
   margin-bottom: 40px;
 
   p {
-    color: #191813;
+    color: $black;
   }
 
   p:last-child {

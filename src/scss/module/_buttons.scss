@@ -4,7 +4,9 @@
   border-color: $dark-pink;
 }
 
-.sb-section-opt-light .btn:focus, .sb-section-opt-light .btn:link:focus, .sb-section-opt-light .btn:visited:focus {
+.sb-section-opt-light .btn:focus,
+.sb-section-opt-light .btn:link:focus,
+.sb-section-opt-light .btn:visited:focus {
   box-shadow: 0 0 0 2px #fff, 0 0 0 4px $dark-pink;
 }
 

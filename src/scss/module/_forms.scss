@@ -1,7 +1,7 @@
 
 .sb-section-opt-light .form-control {
   background-color: #fff;
-  color: #191813;
+  color: $black;
   border-color: #948A8A;
   outline: 0;
   transition: all .15s ease-in-out;
@@ -23,7 +23,7 @@
 }
 
 .sb-section-opt-light .form-label {
-  color: #191813;
+  color: $black;
   font-weight: bold;
 }
 
@@ -63,7 +63,7 @@
   min-height: 18px;
   position: relative;
   margin: 0;
-  color: #191813;
+  color: $black;
 
   &::before {
     display: block;
@@ -84,7 +84,7 @@
 
 .sb-section-opt-light .form__input-checkbox-wrapper .form__label::before, .sb-section-opt-light .form__input-radio-wrapper .form__label::before {
   background-color: #fff;
-  color: #191813;
+  color: $black;
   border-color: #948A8A;
 }
 

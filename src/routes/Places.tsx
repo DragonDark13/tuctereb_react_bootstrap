@@ -50,7 +50,7 @@ const Places = () => {
 
     const navigate = useNavigate();
 
-    function handleLinkClick(path:string) {
+    function handleLinkClick(path: string) {
         navigate(path);
     }
 
@@ -64,7 +64,7 @@ const Places = () => {
                         <p>Побувавши у нашій громаді Ви зможете відвідати багато цікавих об'єктів та пам'яток
                             архітектури,
                             які були створені у різні етапи нашої історії</p>
-                        <Button  size={"lg"} onClick={() => handleLinkClick('/')}>Назад</Button>
+                        <Button size={"lg"} onClick={() => handleLinkClick('/')}>Назад</Button>
                     </Col>
                     <Col xs={12} md={5} data-aos="slide-left">
                         <img src={place1} alt="place1"/>
@@ -79,16 +79,36 @@ const Places = () => {
                     </Col>
                 </Row>
                 {placesArray.map((place, index) => (
-                    <Row className={"align-items-center mt-4 mb-4 gy-2 gy-md-0 place_item"} key={place.title + index}>
-                        <Col xs={12} md={5} data-aos="slide-right">
-                            <img src={place.imageSrc} alt={place.title}/>
-                        </Col>
-                        <Col xs={12} md={7} data-aos="slide-left">
-                            <h4 className={"title"}>{place.title}</h4>
-                            <p>{place.text}</p>
-                        </Col>
+                    <Row
+                        className={`align-items-center mt-4 mb-4 gy-2 gy-md-0 place_item ${index % 2 === 0 ? "even" : "odd"}`}
+                        key={place.title + index}
+                    >
+                        {index % 2 === 0 ? (
+                            // Для парних елементів
+                            <>
+                                <Col xs={12} md={5} data-aos="slide-right">
+                                    <img src={place.imageSrc} alt={place.title}/>
+                                </Col>
+                                <Col xs={12} md={7} data-aos="slide-left">
+                                    <h4 className="title">{place.title}</h4>
+                                    <p>{place.text}</p>
+                                </Col>
+                            </>
+                        ) : (
+                            // Для непарних елементів
+                            <>
+                                <Col xs={12} md={7} data-aos="slide-right">
+                                    <h4 className="title">{place.title}</h4>
+                                    <p>{place.text}</p>
+                                </Col>
+                                <Col xs={12} md={5} data-aos="slide-left">
+                                    <img src={place.imageSrc} alt={place.title}/>
+                                </Col>
+                            </>
+                        )}
                     </Row>
                 ))}
+
                 <Button data-aos="fade-up" className={"btn-lg"} onClick={scrollToTop}>Вверх</Button>
             </PageSectionWrapper>
         </React.Fragment>

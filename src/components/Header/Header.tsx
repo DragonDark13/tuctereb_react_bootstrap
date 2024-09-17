@@ -107,10 +107,8 @@ const Header = ({setHeaderHeight}: IHeader) => {
                             <Offcanvas.Body className={"ps-4 pe-4 pe-lg-0 ps-lg-0"}>
                                 <Nav
                                     className="justify-content-end flex-grow-1 me-auto header_nav_menu align-items-lg-center">
-                                    <Nav.Link
-                                        onClick={() => handleClick('about')}>ПРО НАС
-                                        <span className={"hover_bl"}></span>
-                                    </Nav.Link>
+                                    <Nav.Link onClick={() => handleClick('about')}>ПРО ТЕРЕБОВЛЮ<span
+                                        className={"hover_bl"}></span></Nav.Link>
 
                                     <Nav.Link
                                         onClick={() => handleClick('services')}>ПОСЛУГИ

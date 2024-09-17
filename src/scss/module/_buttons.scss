@@ -73,3 +73,28 @@ a.btn-primary.btn:visited {
   display: block;
   width: 100%;
 }
+
+  .btn-outline-secondary {
+    color: #fff;
+    border-color: #fff;
+    border-radius: 0;
+    border-width: 2px;
+  }
+
+.btn-outline-secondary {
+
+  &:focus, &:link:focus, &:visited:focus {
+    box-shadow: 0 0 0 2px #162415, 0 0 0 4px $dark-pink;
+  }
+
+  &:focus, &:active,
+  &:link:focus,
+  &:link:active,
+  &:visited:focus,
+  &:visited:active {
+    color: #fff;
+    border-color: $dark-pink;
+    background-color: $dark-pink;
+  }
+
+}

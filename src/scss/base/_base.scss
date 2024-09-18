@@ -29,3 +29,7 @@ img {
 .sb-section-opt-light div, .sb-section-opt-light h1, .sb-section-opt-light h2, .sb-section-opt-light h3, .sb-section-opt-light h4, .sb-section-opt-light p, .sb-section-opt-light span, .sb-section-opt-light input {
   color: $black;
 }
+
+.nav-link:focus-visible{
+  box-shadow: none;
+}

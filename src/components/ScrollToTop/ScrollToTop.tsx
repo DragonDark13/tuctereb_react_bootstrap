@@ -9,7 +9,6 @@ const ScrollToTop = () => {
         if (location.hash) {
             const elementId = location.hash.substring(1); // Видаляємо символ "#"
             const element = document.getElementById(elementId);
-            debugger
 
             if (element) {
                 element.scrollIntoView({behavior: "smooth", block: "start"});

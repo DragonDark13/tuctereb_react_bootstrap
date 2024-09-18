@@ -18,8 +18,8 @@ const Header = ({setHeaderHeight}: IHeader) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false); // Стан для відкритого меню
     const [isSticky, setIsSticky] = useState(true); // Стан для застійного підвищення заголовка]
     const location = useLocation();
-    const navigation = useNavigate()
-    const [targetId, setTargetId] = useState<string|null>(null); // зберігаємо ID блоку для скролу
+    const navigate = useNavigate()
+    const [targetId, setTargetId] = useState<string | null>(null); // зберігаємо ID блоку для скролу
 
 
     // Перевірка поточного шляху
@@ -52,15 +52,10 @@ const Header = ({setHeaderHeight}: IHeader) => {
         setIsMenuOpen(false); // Закриваємо меню
     };
 
-    const handleClick = (id:string) => {
-        // Встановлюємо цільовий блок
-        setTargetId(id);
-        // Переходимо на головну сторінку
-        if (!isMainPage) {
-            navigation('/');
-        }
-        handleCloseMenu();
-    };
+    function handleSimpleLinkClick(path: string) {
+        navigate(path);
+    }
+
 
     // Використовуємо useEffect для перевірки, коли перехід вже відбувся
     useEffect(() => {
@@ -107,17 +102,17 @@ const Header = ({setHeaderHeight}: IHeader) => {
                             <Offcanvas.Body className={"ps-4 pe-4 pe-lg-0 ps-lg-0"}>
                                 <Nav
                                     className="justify-content-end flex-grow-1 me-auto header_nav_menu align-items-lg-center">
-                                    <Nav.Link onClick={() => handleClick('about')}>ПРО ТЕРЕБОВЛЮ<span
+                                    <Nav.Link as={RouterLink} to={'/#about'}>ПРО ТЕРЕБОВЛЮ<span
                                         className={"hover_bl"}></span></Nav.Link>
 
                                     <Nav.Link
-                                        onClick={() => handleClick('services')}>ПОСЛУГИ
+                                        as={RouterLink} to={'/#services'}>ПОСЛУГИ
                                         <span className={"hover_bl"}></span>
                                     </Nav.Link>
 
                                     <Button size={"lg"} variant={"outline-secondary"}
                                             className={" text-white"}
-                                            onClick={() => handleClick('contacts')}>КОНТАКТИ</Button>
+                                            onClick={() => handleSimpleLinkClick('/#contacts')}>КОНТАКТИ</Button>
 
                                 </Nav>
                             </Offcanvas.Body>

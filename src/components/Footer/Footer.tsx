@@ -1,24 +1,24 @@
 import PageSectionWrapper from "../PageSectionWrapper/PageSectionWrapper";
 import {Col, Nav, Navbar, Row, Stack} from "react-bootstrap";
-import { Link as RouterLink} from 'react-router-dom';
+import {Link as RouterLink} from 'react-router-dom';
 
 const Footer = () => {
+
     return (
 
-        <footer>
+        <footer className={"footer"}>
             <PageSectionWrapper variant={"dark"} id={"footer"}>
                 <Row className={"align-items-center"}>
                     <Col xs={12} md={10}>
                         <Navbar className={"pb-0 pt-0"}>
-                            <Navbar.Brand href="#home"><RouterLink to={'/'}>tic.terebovlia</RouterLink></Navbar.Brand>
+                            <Navbar.Brand><RouterLink to={'/'}>tic.terebovlia</RouterLink></Navbar.Brand>
                         </Navbar>
 
                         <Navbar className={"footer_navbar pb-0 pt-0 "}>
                             <Nav className="me-auto mb-2 mb-lg-0 flex-wrap flex-lg-nowrap">
-                                <Nav.Link href="#home">НАШІ ПОСЛУГИ</Nav.Link>
-                                <Nav.Link href="#features">Schedule appointment</Nav.Link>
-                                <Nav.Link href="#pricing">Complete intake</Nav.Link>
-                                <Nav.Link href="#pricing">Contact</Nav.Link>
+                                <Nav.Link as={RouterLink} to={'/'}>Головна</Nav.Link>
+                                <Nav.Link as={RouterLink} to={'/'} >Complete intake</Nav.Link>
+                                <Nav.Link as={RouterLink} to={'/#contacts'}>Контакти</Nav.Link>
                             </Nav>
                         </Navbar>
 
